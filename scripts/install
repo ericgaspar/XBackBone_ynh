@@ -94,6 +94,10 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path"
 
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
+
 #=================================================
 # PHP-FPM CONFIGURATION
 #=================================================
@@ -132,6 +136,9 @@ ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 #ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
+#chmod 400 "$final_path/config.php"
+#chown $app:$app "$final_path/config.php"
+
 #=================================================
 # FINAL BOOKSTACK INSTALL
 #=================================================
@@ -140,14 +147,6 @@ ynh_script_progression --message="Install" --weight=5
 #pushd $final_path
 #	php$phpversion bin/migrate --install
 #popd
-
-chmod 750 "$final_path"
-chmod -R o-rwx "$final_path"
-chown -R $app:www-data "$final_path"
-
-#chmod 400 "$final_path/config.php"
-#chown $app:$app "$final_path/config.php"
-
 
 #=================================================
 # SETUP SSOWAT

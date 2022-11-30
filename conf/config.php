@@ -10,6 +10,6 @@ return [
     ],
     'storage' => [
         'driver' => 'local',
-        'path'   => '__DATADIR__',
+        'path'   => '__FINALPATH__/storage',
     ],
 ];

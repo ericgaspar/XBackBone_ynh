@@ -131,11 +131,11 @@ ynh_script_progression --message="Adding a configuration file..." --weight=1
 #=================================================
 # FINAL BOOKSTACK INSTALL
 #=================================================
-ynh_script_progression --message="Install database" --weight=5
+#ynh_script_progression --message="Install database" --weight=5
 
-pushd $final_path
-	php$phpversion bin/migrate --install
-popd
+#pushd $final_path
+#	php$phpversion bin/migrate --install
+#popd
 
 #=================================================
 # SETUP SSOWAT

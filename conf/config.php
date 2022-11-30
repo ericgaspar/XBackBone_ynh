@@ -3,22 +3,13 @@
 return [
     'base_url' => 'https://__DOMAIN__/__PATH__', // no trailing slash
     'db'       => [
-        'connection' => 'mysql',
-        'dsn'        => 'host=localhost;port=3306;dbname=__DB_NAME__',
-        'username'   => '__DB_USER__',
-        'password'   => '__DB_PWD__',
+        'connection' => 'sqlite',
+        'dsn'        => realpath(__DIR__).'/resources/database/xbackbone.db',
+        'username'   => null,
+        'password'   => null,
     ],
-    'storage'  => [
+    'storage' => [
         'driver' => 'local',
-        'path'   => '__DATADIR__',
-    ],
-
-    'ldap'     => [
-        'enabled' => true, // enable it
-        'host' => 'ldap://127.0.0.1', // set the ldap host
-        'port' => 389, // ldap port
-        'base_domain' => 'dc=yunohost,dc=org', // the base_dn string
-        'user_domain' => 'ou=users', // the user dn string
-        'rdn_attribute' => 'uid=', // the attribute to identify the user
+        'path'   => realpath(__DIR__).'__DATADIR__',
     ],
 ];

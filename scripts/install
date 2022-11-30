@@ -131,7 +131,7 @@ chown $app:$app "$final_path/config.php"
 #=================================================
 # FINAL BOOKSTACK INSTALL
 #=================================================
-ynh_script_progression --message="Install" --weight=5
+ynh_script_progression --message="Install database" --weight=5
 
 pushd $final_path
 	php$phpversion bin/migrate --install

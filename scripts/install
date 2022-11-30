@@ -128,18 +128,18 @@ chown -R $app:www-data "$datadir"
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+#ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
+#ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
 #=================================================
 # FINAL BOOKSTACK INSTALL
 #=================================================
 ynh_script_progression --message="Install" --weight=5
 
-pushd $final_path
-	php$phpversion bin/migrate --install
-popd
+#pushd $final_path
+#	php$phpversion bin/migrate --install
+#popd
 
 chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"

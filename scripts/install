@@ -130,7 +130,7 @@ chown -R $app:www-data "$datadir"
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
+#ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
 #=================================================
 # FINAL BOOKSTACK INSTALL
@@ -145,8 +145,8 @@ chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
 
-chmod 400 "$final_path/config.php"
-chown $app:$app "$final_path/config.php"
+#chmod 400 "$final_path/config.php"
+#chown $app:$app "$final_path/config.php"
 
 
 #=================================================

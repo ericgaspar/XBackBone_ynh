@@ -15,7 +15,6 @@ return [
 ];
 
 return array(
-    ...
     'ldap' => array(
         'enabled' => true, // enable it
         'host' => 'ldap://127.0.0.1', // set the ldap host

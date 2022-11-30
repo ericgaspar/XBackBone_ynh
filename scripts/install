@@ -136,17 +136,17 @@ ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 #ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
-#chmod 400 "$final_path/config.php"
-#chown $app:$app "$final_path/config.php"
+chmod 400 "$final_path/config.php"
+chown $app:$app "$final_path/config.php"
 
 #=================================================
 # FINAL BOOKSTACK INSTALL
 #=================================================
 ynh_script_progression --message="Install" --weight=5
 
-#pushd $final_path
-#	php$phpversion bin/migrate --install
-#popd
+pushd $final_path
+	php$phpversion bin/migrate --install
+popd
 
 #=================================================
 # SETUP SSOWAT

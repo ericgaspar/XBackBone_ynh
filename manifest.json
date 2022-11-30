@@ -37,6 +37,12 @@
                 "type": "domain"
             },
             {
+                "name": "path",
+                "type": "path",
+                "example": "/xbackbone",
+                "default": "/xbackbone"
+            },
+            {
                 "name": "is_public",
                 "type": "boolean",
                 "default": true

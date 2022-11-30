@@ -8,12 +8,12 @@ return [
         'username'   => '__DB_USER__',
         'password'   => '__DB_PWD__',
     ],
-    'storage' => [
+    'storage'  => [
         'driver' => 'local',
         'path'   => '__DATADIR__',
     ],
 
-    'ldap' => [
+    'ldap'     => [
         'enabled' => true, // enable it
         'host' => 'ldap://127.0.0.1', // set the ldap host
         'port' => 389, // ldap port
